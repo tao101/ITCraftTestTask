@@ -3,14 +3,8 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-function HomeScreen() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      
-    </View>
-  );
-}
+import Authors from './screens/Authors';
+import Posts from './screens/Posts';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +12,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Authors" component={Authors} />
+        <Stack.Screen name="Posts" component={Posts} />
       </Stack.Navigator>
     </NavigationContainer>
   );
