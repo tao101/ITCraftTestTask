@@ -1,6 +1,6 @@
 # ITCraftTestTask
 
-Screenshots
+Screenshots:
 
 The application contains 2 screens:
 Authors screen. It shows a list of authors. User can search by name and email
