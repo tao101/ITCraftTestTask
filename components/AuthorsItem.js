@@ -7,7 +7,7 @@ import {
   Platform,
   TouchableOpacity,
 } from 'react-native';
-import ArrowRight from '../assets/baseline_keyboard_arrow_right_black_36dp.png';
+import ArrowRight from '../assets/arrow.png';
 
 export default function Authors(props) {
   const {nameAb, name, email, posts} = props;
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     color: '#382A2C',
   },
   right: {
-    width: 24,
-    height: 24,
+    width: 12,
+    height: 12,
   },
 });
