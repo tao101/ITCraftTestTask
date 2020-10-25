@@ -1,18 +1,21 @@
 import * as React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Platform} from 'react-native';
 import ArrowRight from '../assets/baseline_keyboard_arrow_right_black_36dp.png';
 
-export default function Authors() {
+export default function Authors(props) {
+  const {nameAb, name, email, numPosts} = props;
   return (
     <View style={styles.container}>
       <View style={styles.circle}>
-        <Text style={styles.nameAb}>JS</Text>
+        <Text style={styles.nameAb}>{nameAb}</Text>
       </View>
       <View style={styles.infoContainer}>
-        <Text style={styles.name}>James Smith</Text>
-        <Text style={styles.email}>johndoe@mail.com</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.email}>{email}</Text>
       </View>
-      <Text style={styles.numPosts}>5 posts</Text>
+      <Text style={styles.numPosts}>
+        {numPosts} {numPosts == 1 ? 'post' : 'posts'}
+      </Text>
       <Image style={styles.right} source={ArrowRight} />
     </View>
   );
@@ -26,35 +29,52 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   circle: {
-    
-    width:40,
-    height:40,
-    justifyContent:'center',
-    backgroundColor:'#6FCF97',
-    borderRadius:99,
-    
-    
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    backgroundColor: '#6FCF97',
+    borderRadius: 99,
   },
   nameAb: {
-      textAlign:'center',
-      color:'#382A2C',
-      fontFamily:'Roboto'
+    textAlign: 'center',
+    color: '#382A2C',
+    fontFamily: Platform.OS == 'ios' ? 'Arial' : 'Roboto',
+    fontWeight: '500',
+    fontSize: 14,
+    lineHeight: 24,
+    letterSpacing: 0.1,
   },
   infoContainer: {
     flex: 2,
-    paddingLeft:16
+    paddingLeft: 16,
   },
   name: {
     flex: 1,
+    fontFamily: Platform.OS == 'ios' ? 'Arial' : 'Roboto',
+    fontSize: 16,
+    lineHeight: 24,
+    letterSpacing: 0.44,
+    color: '#382A2C',
   },
   email: {
     flex: 1,
+    fontFamily: Platform.OS == 'ios' ? 'Arial' : 'Roboto',
+    fontSize: 12,
+    lineHeight: 16,
+    letterSpacing: 0.4,
+    color: '#382A2C',
+    opacity: 0.54,
   },
   numPosts: {
     flex: 1,
+    fontFamily: Platform.OS == 'ios' ? 'Arial' : 'Roboto',
+    fontSize: 16,
+    lineHeight: 24,
+    letterSpacing: 0.44,
+    color: '#382A2C',
   },
   right: {
-    width: 32,
-    height: 32,
+    width: 24,
+    height: 24,
   },
 });
