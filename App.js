@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Authors" headerMode="none">
         <Stack.Screen name="Authors" component={Authors} />
         <Stack.Screen name="Posts" component={Posts} />
       </Stack.Navigator>
