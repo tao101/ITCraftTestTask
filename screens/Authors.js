@@ -21,7 +21,7 @@ export default function Authors(props) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [input, setInput] = useState('');
-  const [authors, setAuthors] = useState([]);
+  const [costumData, setCostumData] = useState([]);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function Authors(props) {
 
               items.push(item);
             }
-            setAuthors(items);
+            setData(items);
             setLoading(false);
           })
           .catch((error) => {
@@ -68,7 +68,24 @@ export default function Authors(props) {
       });
   }, []);
 
-  
+  const onInputChange = (txt) => {
+    txt = txt.toLowerCase();
+    console.log(txt)
+    var res = data.filter((item) => {
+        console.log(item.name+' and ');
+      if (item.name.toLowerCase().includes(txt) || item.email.toLowerCase().includes(txt)) {
+        return true;
+      }
+      return false;
+    });
+    
+    console.log('------------------');
+    console.log('res is ');
+    console.log(res)
+    console.log('******************');
+    setCostumData(res);
+    setInput(txt);
+  };
 
   const renderItem = ({item}) => (
     <AuthorsItem
@@ -96,15 +113,17 @@ export default function Authors(props) {
     );
   }
 
+  const listData = input == '' ? data : costumData;
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.pageTitle}>Authors</Text>
       <View style={styles.searchContainer}>
         <Image style={styles.searchIcon} source={search} />
-        <TextInput style={styles.search} placeholder="Search" />
+        <TextInput style={styles.search} placeholder="Search" onChangeText={onInputChange} />
       </View>
       <FlatList
-        data={authors}
+        data={listData}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
       />

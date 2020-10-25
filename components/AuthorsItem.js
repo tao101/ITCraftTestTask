@@ -38,7 +38,7 @@ export default function Authors(props) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 72,
+    height: 80,
     flexDirection: 'row',
     padding: 16,
     alignItems: 'center',
