@@ -4,11 +4,11 @@
 
 ## AuthorsScreen:
 
-![AuthorsScreen](https://octodex.github.com/images/yaktocat.png)
+![AuthorsScreen](https://github.com/tao101/ITCraftTestTask/blob/main/screenshots/Screen%20Shot%202020-10-25%20at%2015.50.21.png?raw=true)
 
 ## PostsScreen:
 
-![AuthorsScreen](https://octodex.github.com/images/yaktocat.png)
+![AuthorsScreen](https://github.com/tao101/ITCraftTestTask/blob/main/screenshots/Screen%20Shot%202020-10-25%20at%2015.50.36.png?raw=true)
 
 # Task
 
