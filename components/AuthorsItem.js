@@ -1,11 +1,26 @@
 import * as React from 'react';
-import {View, Text, StyleSheet, Image, Platform} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
 import ArrowRight from '../assets/baseline_keyboard_arrow_right_black_36dp.png';
 
 export default function Authors(props) {
-  const {nameAb, name, email, numPosts} = props;
+  const {nameAb, name, email, posts} = props;
+
+  const onAuthor = () => {
+    props.navigation.navigate('Posts', {
+      name: name,
+      posts: posts,
+    });
+  };
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onAuthor}>
       <View style={styles.circle}>
         <Text style={styles.nameAb}>{nameAb}</Text>
       </View>
@@ -14,10 +29,10 @@ export default function Authors(props) {
         <Text style={styles.email}>{email}</Text>
       </View>
       <Text style={styles.numPosts}>
-        {numPosts} {numPosts == 1 ? 'post' : 'posts'}
+        {posts.length} {posts.length == 1 ? 'post' : 'posts'}
       </Text>
       <Image style={styles.right} source={ArrowRight} />
-    </View>
+    </TouchableOpacity>
   );
 }
 
