@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import ArrowRight from '../assets/arrow.png';
 
-export default function Authors(props) {
+export default function AuthorsItem(props) {
   const {nameAb, name, email, posts} = props;
 
   const onAuthor = () => {
