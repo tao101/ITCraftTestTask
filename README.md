@@ -1,6 +1,16 @@
 # ITCraftTestTask
 
-Screenshots:
+# Screenshots:
+
+## AuthorsScreen:
+
+![AuthorsScreen](https://octodex.github.com/images/yaktocat.png)
+
+## PostsScreen:
+
+![AuthorsScreen](https://octodex.github.com/images/yaktocat.png)
+
+# Task
 
 The application contains 2 screens:
 Authors screen. It shows a list of authors. User can search by name and email
